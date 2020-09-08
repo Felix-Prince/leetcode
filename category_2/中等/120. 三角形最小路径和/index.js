@@ -20,6 +20,7 @@ var minimumTotal = function (triangle) {
             dp[i][j] =
                 Math.min(dp[i - 1][j], dp[i - 1][j - 1]) + triangle[i][j];
         }
+        // 单独处理最边界的值
         dp[i][i] = dp[i - 1][i - 1] + triangle[i][i];
     }
     return Math.min(...dp[m - 1]);
